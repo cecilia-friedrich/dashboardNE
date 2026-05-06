@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error Fatal — Tablero NE 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0000AA;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: #AAAAAA;
+}
+.window {
+  width: 640px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+}
+.titlebar {
+  background: #AAAAAA;
+  color: #0000AA;
+  padding: 3px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titlebar-btn {
+  background: #AAAAAA;
+  color: #0000AA;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  width: 18px;
+  height: 16px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.body {
+  background: #0000AA;
+  padding: 24px 32px 20px;
+}
+.title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+.divider {
+  color: #AAAAAA;
+  font-size: 12px;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+}
+.content {
+  font-size: 13px;
+  line-height: 2;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.highlight { color: #FFFF55; }
+.footer-text {
+  border-top: 1px solid #555;
+  padding-top: 14px;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #AAAAAA;
+  margin-bottom: 24px;
+}
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.btn {
+  background: #AAAAAA;
+  color: #0000AA;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 24px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #555;
+  border-bottom: 2px solid #555;
+  cursor: pointer;
+}
+.btn:active {
+  border-top: 2px solid #555;
+  border-left: 2px solid #555;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+.statusbar {
+  background: #0000AA;
+  border-top: 1px solid #555;
+  padding: 4px 8px;
+  font-size: 11px;
+  color: #AAAAAA;
+  display: flex;
+  justify-content: space-between;
+}
+.blink { color: #FFFF55; }
+</style>
+</head>
+<body>
+
+<div class="window">
+  <div class="titlebar">
+    <span>Windows 3.1 — Fatal Error</span>
+    <div class="titlebar-btn">▼</div>
+  </div>
+
+  <div class="body">
+    <div class="title">Windows — Excepción fatal 0E</div>
+    <div class="divider">════════════════════════════════════════════════════════════</div>
+
+    <div class="content">
+      Un error fatal ha ocurrido en el módulo TABLERO_NE2026 a la<br>
+      dirección de memoria 0028:C0004E20.<br><br>
+      <span class="highlight">OBJETIVO_EXCEDIDO_EXCEPTION</span><br><br>
+      El sistema detectó <span class="highlight">2,049 ventas</span> cuando el máximo<br>
+      esperado era 2,000. El tablero no está preparado<br>
+      para tanto éxito y necesita cerrarse.<br><br>
+      Memoria en uso:&nbsp;&nbsp;640 KB de festejo<br>
+      Campaña activa:&nbsp;&nbsp;BOOTCAMP "LAS REGLAS DEL JUEGO"<br>
+      Período:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08/04/2026 — 05/05/2026<br>
+      CPA registrado:&nbsp;&nbsp;$43 (demasiado bajo para procesar)
+    </div>
+
+    <div class="footer-text">
+      * Presione cualquier tecla para celebrar con el equipo<br>
+      * Presione CTRL+ALT+SUPR para volver a lanzar (no recomendado)<br>
+      * Presione ESC para fingir que esto no pasó (imposible)
+    </div>
+
+    <div class="buttons">
+      <button class="btn">&nbsp;Cerrar&nbsp;</button>
+      <button class="btn">&nbsp;Ignorar&nbsp;</button>
+      <button class="btn">Festejar</button>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    <span>MASTERY HAUS VER 2026.05</span>
+    <span class="blink" id="blink">█</span>
+    <span>MEM: 2,049/2,000 VENTAS</span>
+  </div>
+</div>
+
+<script>
+  let v = true;
+  setInterval(() => {
+    const b = document.getElementById('blink');
+    if (b) { b.style.opacity = v ? '0' : '1'; v = !v; }
+  }, 600);
+</script>
+
+</body>
+</html>
